@@ -35,7 +35,7 @@ steps:
     name: "Build Cache Restore"
     timeoutInSeconds: 140
     command: |
-      oci os object get --bucket-name build-cache --file ${BUILD_CACHE_OS_FILE_NAME} --name ${BUILD_CACHE_OS_FILE_NAME} && unzip ${BUILD_CACHE_OS_FILE_NAME}
+      #oci os object get --bucket-name build-cache --file ${BUILD_CACHE_OS_FILE_NAME} --name ${BUILD_CACHE_OS_FILE_NAME} && unzip ${BUILD_CACHE_OS_FILE_NAME}
       echo "Done..."
   - type: Command
     name: "Docker build"
