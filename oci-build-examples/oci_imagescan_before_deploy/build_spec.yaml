@@ -12,6 +12,7 @@ env:
   # you can then access the value of that secret in your build_spec.yaml commands
   vaultVariables:
   #  EXAMPLE_SECRET: "YOUR-SECRET-OCID"
+    DOCKER_TOKEN: ocid1.vaultsecret.oc1.iad.amaaaaaai4sgdsiadchg7deigt75gotmowijydjjxafnlktibq64lzyvtp6q
   
   # exportedVariables are made available to use as parameters in sucessor Build Pipeline stages
   # For this Build to run, the Build Pipeline needs to have a BUILDRUN_HASH parameter set
@@ -33,6 +34,7 @@ steps:
       cd ${OCI_PRIMARY_SOURCE_DIR}
       docker build --pull --rm -t sample_python_fastap_image .
       docker images
+      docker login us-ashburn-1.ocir.io/idqvnh1tmejw --username idqvnh1tmejw/sankirthsaiyadav96@gmail.com --password ${DOCKER_TOKEN}
     
     onFailure:
       - type: Command
