@@ -52,4 +52,4 @@ outputArtifacts:
     type: DOCKER_IMAGE
     # this location tag doesn't effect the tag used to deliver the container image
     # to the Container Registry
-    location: sample_python_fastap_image:${BUILDRUN_HASH}
+    location: us-ashburn-1.ocir.io/idqvnh1tmejw/sample_python_fastap_image:${BUILDRUN_HASH}
