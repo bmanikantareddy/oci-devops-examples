@@ -31,13 +31,12 @@ steps:
     timeoutInSeconds: 600
     name: "Build the app"
     command: |
-      cd ${OCI_PRIMARY_SOURCE_DIR}
-      pwd
+      cd ${OCI_PRIMARY_SOURCE_DIR}/oci-build-examples/oci_imagescan_before_deploy
       echo "OCI_PRIMARY_SOURCE_DIR : ${OCI_PRIMARY_SOURCE_DIR}"
-      ls -alrt 
       docker build --pull --rm -t sample_python_fastap_image:${BUILDRUN_HASH} .
       docker images
       docker login us-ashburn-1.ocir.io/idqvnh1tmejw --username idqvnh1tmejw/sankirthsaiyadav96@gmail.com --password ${DOCKER_TOKEN}
+      docker push us-ashburn-1.ocir.io/idqvnh1tmejw/sample_python_fastap_image:${BUILDRUN_HASH}
     
     onFailure:
       - type: Command
