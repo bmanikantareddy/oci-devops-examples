@@ -1,5 +1,5 @@
 
-FROM python:3.9
+FROM us-ashburn-1.ocir.io/idqvnh1tmejw/python:3.9
 
 WORKDIR /code
 COPY ./requirements.txt /code/requirements.txt
