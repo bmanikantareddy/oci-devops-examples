@@ -32,7 +32,7 @@ steps:
     name: "Build the app"
     command: |
       cd ${OCI_PRIMARY_SOURCE_DIR}
-      docker build --pull --rm -t sample_python_fastap_image .
+      docker build --pull --rm -t sample_python_fastap_image:${BUILDRUN_HASH} .
       docker images
       docker login us-ashburn-1.ocir.io/idqvnh1tmejw --username idqvnh1tmejw/sankirthsaiyadav96@gmail.com --password ${DOCKER_TOKEN}
     
@@ -50,4 +50,4 @@ outputArtifacts:
     type: DOCKER_IMAGE
     # this location tag doesn't effect the tag used to deliver the container image
     # to the Container Registry
-    location: sample_python_fastap_image:latest
+    location: sample_python_fastap_image:${BUILDRUN_HASH}
