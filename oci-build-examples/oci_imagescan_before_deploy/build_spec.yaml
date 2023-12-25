@@ -32,6 +32,7 @@ steps:
     command: |
       cd ${OCI_PRIMARY_SOURCE_DIR}
       docker build --pull --rm -t sample_python_fastap_image .
+      docker images
     
     onFailure:
       - type: Command
