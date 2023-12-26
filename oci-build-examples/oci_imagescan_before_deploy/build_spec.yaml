@@ -37,7 +37,6 @@ steps:
       docker build --pull --rm -t us-ashburn-1.ocir.io/idqvnh1tmejw/sample_python_fastap_image:${BUILDRUN_HASH} .
       docker images | grep -i sample_python_fastap_image
       docker push us-ashburn-1.ocir.io/idqvnh1tmejw/sample_python_fastap_image:${BUILDRUN_HASH}
-      #oci artifacts generic artifact upload-by-path --artifact-path build_spec.yaml --artifact-version 1.0.${BUILDRUN_HASH} --content-body build_spec.yaml --repository-id ocid1.artifactrepository.oc1.iad.0.amaaaaaai4sgdsiajhdveh326o74k7ruzu5zimo4iyg6mzvjud22uhy2x7oa
     
     onFailure:
       - type: Command
